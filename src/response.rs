@@ -465,6 +465,24 @@ impl Response {
             upgrade: None,
         }
     }
+    
+    /// Builds an empty `Response` with a 500 status code.
+    ///
+    /// # Example
+    ///
+    /// ```
+    /// use rouille::Response;
+    /// let response = Response::empty_500();
+    /// ```
+    #[inline]
+    pub fn empty_500() -> Response {
+        Response {
+            status_code: 500,
+            headers: vec![],
+            data: ResponseBody::empty(),
+            upgrade: None,
+        }
+    }
 
     /// Changes the status code of the response.
     ///
